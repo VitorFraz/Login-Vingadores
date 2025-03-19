@@ -17,8 +17,48 @@ $consultarUsuarioSenha = 'SELECT * FROM tb_usuario WHERE usuario = "' . $userFor
 
 $resultado = $banco->query($consultarUsuarioSenha)->fetch();
 
+$status = $resultado['status'];
+
+$_
+?>
+
+
+
+<?php if ($status == 'admin') { ?>
+
+    
+
+<h1>Bem Vindo USUARIO ADMIN</h1>
+
+<?php } ?>
+
+<h1>Bem Vindo USUARIO COMUM</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+die;
 if (!empty($resultado) && $resultado != false) {
-    header('location:listaUsers.php');
+    header('location:loginSucesso.php');
 } else {
     header('location:index.php');
 }
